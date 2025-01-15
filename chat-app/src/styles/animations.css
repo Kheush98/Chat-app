@@ -1,0 +1,243 @@
+body {
+  background-color: #ffffff;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.input-focus-effect {
+  position: relative;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.input-focus-effect::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 0.85rem;
+  background: linear-gradient(
+    45deg,
+    #ff0f7b,
+    #f89b29,
+    #4f46e5,
+    #06b6d4,
+    #ff0f7b
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.input-focus-effect:focus-within::before {
+  opacity: 1;
+  animation: gradient 8s ease infinite;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.chat-container {
+  height: 100vh;
+  max-width: 100%;
+  margin: 0;
+  background: #ffffff;
+}
+
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.messages-container {
+  height: calc(100vh - 130px);
+  padding: 1rem;
+  overflow-y: auto;
+  background: #ffffff;
+}
+
+.messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 20px;
+}
+
+.message-input-container {
+  padding: 1rem;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  position: sticky;
+  bottom: 0;
+}
+
+.message-input {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 24px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  width: 100%;
+  color: #1f2937;
+  outline: none;
+}
+
+.message-input::placeholder {
+  color: #9ca3af;
+}
+
+.message-input:focus {
+  background: #f3f4f6;
+}
+
+.send-button {
+  background: transparent;
+  padding: 0.5rem;
+  color: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.send-button:hover {
+  background: #f3f4f6;
+}
+
+.send-button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.message-bubble {
+  max-width: 80%;
+  margin: 0.25rem 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 18px;
+}
+
+.message-bubble.sent {
+  background: #3b82f6;
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+.message-bubble.received {
+  background: #f3f4f6;
+  color: #1f2937;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+}
+
+.system-message {
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  margin: 0.5rem auto;
+  max-width: fit-content;
+  text-align: center;
+}
+
+.message-group {
+  margin: 0.5rem 0;
+}
+
+.username {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-left: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.timestamp {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.25rem;
+}
+
+.user-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.chat-header h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.online-status {
+  width: 0.625rem;
+  height: 0.625rem;
+  background: #10b981;
+  border-radius: 50%;
+  margin-left: 0.25rem;
+}

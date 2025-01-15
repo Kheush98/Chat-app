@@ -1,0 +1,14 @@
+services:
+  chat-client:
+    image: kheush98/chat-app:client
+    ports:
+      - 5000:5173
+    environment:
+      VITE_SERVER_URL: ${SERVER_URL}
+
+    chat-server:
+      image: kheush98/chat-app:server
+      ports:
+        - 3000:3000
+      environment:
+        PORT: ${PORT}
