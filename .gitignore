@@ -1,5 +1,0 @@
-./chat-app/node_modules
-./chat-app/.env
-
-./chat-app-server/node_modules
-./chat-app-server/.env
